@@ -557,17 +557,18 @@ class PagSeguroRecorrente extends PagSeguroClient
      * Lista as ordens de pagamento de um pagamento recorrente.
      *
      * @param string $preApprovalCode
-     *
      * @param array $parameters
-     * @return \SimpleXMLElement
+     *
      * @throws PagSeguroException
+     *
+     * @return \SimpleXMLElement
      */
-    public function paymentOrders($preApprovalCode, $parameters=[])
+    public function paymentOrders($preApprovalCode, $parameters = [])
     {
         return $this->sendTransaction([
                 'email' => $this->email,
                 'token' => $this->token,
-            ]+$parameters, $this->url['preApproval'].'/'.$preApprovalCode.'/payment-orders', false);
+            ] + $parameters, $this->url['preApproval'].'/'.$preApprovalCode.'/payment-orders', false);
     }
 
     /**
