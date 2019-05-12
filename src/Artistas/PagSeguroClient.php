@@ -16,7 +16,7 @@ class PagSeguroClient extends PagSeguroConfig
      *
      * @return \SimpleXMLElement
      */
-    protected function sendTransaction(array $parameters, $url = null, $post = true, array $headers = ['Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1'])
+    protected function sendTransaction(array $parameters, $url = null, $post = true, array $headers = ['Accept: application/vnd.pagseguro.com.br.v3+xml;charset=ISO-8859-1', 'Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1'])
     {
         if ($url === null) {
             $url = $this->url['transactions'];

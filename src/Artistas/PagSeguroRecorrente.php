@@ -558,11 +558,16 @@ class PagSeguroRecorrente extends PagSeguroClient
      *
      * @param string $preApprovalCode
      *
+     * @param array $parameters
      * @return \SimpleXMLElement
+     * @throws PagSeguroException
      */
-    public function paymentOrders($preApprovalCode)
+    public function paymentOrders($preApprovalCode, $parameters=[])
     {
-        return $this->sendJsonTransaction([], $this->url['preApproval'].'/'.$preApprovalCode.'/payment-orders', 'GET');
+        return $this->sendTransaction([
+                'email' => $this->email,
+                'token' => $this->token,
+            ]+$parameters, $this->url['preApproval'].'/'.$preApprovalCode.'/payment-orders', false);
     }
 
     /**
