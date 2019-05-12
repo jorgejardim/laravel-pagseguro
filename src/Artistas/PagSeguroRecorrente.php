@@ -557,7 +557,7 @@ class PagSeguroRecorrente extends PagSeguroClient
      * Lista as ordens de pagamento de um pagamento recorrente.
      *
      * @param string $preApprovalCode
-     * @param array $parameters
+     * @param array  $parameters
      *
      * @throws PagSeguroException
      *
