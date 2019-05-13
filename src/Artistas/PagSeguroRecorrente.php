@@ -568,7 +568,8 @@ class PagSeguroRecorrente extends PagSeguroClient
         return $this->sendTransaction([
                 'email' => $this->email,
                 'token' => $this->token,
-            ] + $parameters, $this->url['preApproval'].'/'.$preApprovalCode.'/payment-orders', false);
+            ] + $parameters, $this->url['preApproval'].'/'.$preApprovalCode.'/payment-orders', false,
+            ['Accept: application/vnd.pagseguro.com.br.v3+xml;charset=ISO-8859-1', 'Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1']);
     }
 
     /**
